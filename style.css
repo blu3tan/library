@@ -1,0 +1,66 @@
+:root {
+    --body-color: hsl(43, 93%, 95%);
+    --general-border: solid 3px #19120C;
+}
+
+/* General reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100dvh;
+    background-color: var(--body-color);
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*************** Main container ***************/
+
+.main-container {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+    'header'
+    'catalog';
+}
+
+.header {
+    grid-area: 'header';
+    position: sticky;
+    top: 0px;
+    border-bottom: var(--general-border);
+
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'logo'
+    'title'
+    'buttons';
+}
+
+.catalog {
+    min-height: calc(100vh - 100px);
+    grid-area: 'catalog';
+}
+
+/*************** Header ***************/
+
+.logo {
+    grid-area: 'logo';
+    border-right: var(--general-border);
+}
