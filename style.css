@@ -1,6 +1,20 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap');
+
 :root {
     --body-color: hsl(43, 93%, 95%);
     --general-border: solid 3px #19120C;
+    --accent-color: hsl(201, 100%, 42%);
+}
+
+.material-symbols-outlined {
+    color: var(--accent-color);
+    font-size: 4rem;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 40
 }
 
 /* General reset */
@@ -15,6 +29,7 @@
     padding: 0;
 }
 body {
+    font-family: 'Sometype Mono', monospace;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     height: 100dvh;
@@ -28,11 +43,16 @@ input, button, textarea, select {
     font: inherit;
 }
 
+h1 {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
 /*************** Main container ***************/
 
 .main-container {
     display: grid;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 120px 1fr;
     grid-template-areas:
     'header'
     'catalog';
@@ -45,7 +65,7 @@ input, button, textarea, select {
     border-bottom: var(--general-border);
 
     display: grid;
-    grid-template-columns: 100px 1fr 1fr;
+    grid-template-columns: 120px 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
     'logo'
@@ -54,13 +74,49 @@ input, button, textarea, select {
 }
 
 .catalog {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 120px);
     grid-area: 'catalog';
 }
 
 /*************** Header ***************/
 
 .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     grid-area: 'logo';
     border-right: var(--general-border);
+}
+
+.title {
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons {
+    padding-inline: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    color: var(--body-color);
+    border-radius: 0.2rem;
+    cursor: pointer;
+    background-color:var(--accent-color);
+    transition: all 0.2s ease-in-out ;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
