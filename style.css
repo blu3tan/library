@@ -19,6 +19,8 @@
 
 .read .material-symbols-outlined,
 .delete .material-symbols-outlined {
+    pointer-events: none;
+    user-select: none;
     font-size: 3rem;
     font-variation-settings:
     'FILL' 0,
@@ -189,14 +191,14 @@ h1 {
 
 .cover,
 .author,
-.pages {
+.year {
     border-bottom: var(--general-border);
 }
 
 .cover h2 {
     align-self: flex-start;
     color: #fff;
-    mix-blend-mode:exclusion;
+    mix-blend-mode:screen;
 }
 
 /*************** toggle for read button ***************/
