@@ -1,4 +1,7 @@
 const catalog = document.getElementById('display');
+const btnAdd = document.getElementById('book-add');
+const btnRead = document.querySelector('read');
+const btnDelete = document.getElementById('delete');
 
 const library = [
     {
@@ -37,11 +40,22 @@ function displayBooks() {
         readIcon.classList.add('material-symbols-outlined');
         trash.classList.add('delete');
         trashIcon.classList.add('material-symbols-outlined');
-        readIcon.innerText = 'visibility';
+        readIcon.innerText = 'visibility_off';
         trashIcon.innerText = 'delete';
         coverText.innerText = item.title;
         author.innerText = item.author;
         pages.innerText = item.pages;
+
+        read.addEventListener('click', (e) => {
+            if (readIcon.innerText == 'visibility_off') {
+                toggleRead (e.target);
+                readIcon.innerText = 'visibility';
+            }
+            else {
+                readIcon.innerText = 'visibility_off';
+                toggleRead (e.target);
+            }
+        });
         
         cover.appendChild(coverText);
         book.appendChild(cover);
@@ -54,6 +68,10 @@ function displayBooks() {
         status.appendChild(trash);
         catalog.appendChild(book);
     });
+};
+
+function toggleRead (element) {
+    element.classList.toggle('toggleOn');
 };
 
 displayBooks();

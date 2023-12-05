@@ -199,6 +199,14 @@ h1 {
     mix-blend-mode:exclusion;
 }
 
+/*************** toggle for read button ***************/
+
+.read.toggleOn {
+    color: var(--body-color);
+    background-color: var(--accent-color);
+    transition: all 0.2s ease-in-out;
+}
+
 /*************** Responsive queries ***************/
 
 @media (min-width: 1350px) {
