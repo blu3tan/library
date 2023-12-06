@@ -81,7 +81,11 @@ function displayBooks() {
         });
 
         trash.addEventListener('click', (e) => {
-            book.remove();
+            book.classList.add('book-remove');
+            setTimeout (() => {book.remove();}, 600);
+            const index = book.dataset;
+            library.splice((index.index), 1);
+            // console.log(index.index);
         });
 
         function randomHsl() {
