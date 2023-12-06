@@ -5,10 +5,13 @@
     --body-color: hsl(43, 93%, 95%);
     --general-border: solid 3px #19120C;
     --accent-color: hsl(201, 100%, 42%);
+    --accent-color-high: hsl(201, 85%, 52%);
+    --delete-color: hsl(354, 64%, 54%);
 }
 
-.material-symbols-outlined#book {
-    color: var(--body-color);
+.material-symbols-outlined#book,
+.material-symbols-outlined#add-new {
+    color: #fff;
     font-size: 4rem;
     font-variation-settings:
     'FILL' 0,
@@ -76,12 +79,14 @@ h1 {
     position: sticky;
     z-index: 10;
     top: 0px;
-    background-color: var(--body-color);
-    border-top: var(--general-border);
-    border-bottom: var(--general-border);
+    margin-top: 1rem;
+    margin-inline: 2rem;
+    background-color: #fff;
+    border: var(--general-border);
+    border-radius: 0.2rem;
 
     display: grid;
-    grid-template-columns: 120px 1fr 1fr;
+    grid-template-columns: 120px 1fr 120px;
     grid-template-rows: 1fr;
     grid-template-areas:
     'logo'
@@ -104,6 +109,7 @@ h1 {
 
     grid-area: 'logo';
     border-right: var(--general-border);
+    
 }
 
 .title {
@@ -111,33 +117,24 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-area: 'title';
 }
 .buttons {
-    padding-inline: 4rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.btn {
+    background-color: var(--accent-color);
+    border-left: var(--general-border);
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 0.5rem 1.5rem;
-    color: var(--body-color);
-    border-radius: 0.2rem;
-    cursor: pointer;
-    border: var(--general-border);
-    background-color:var(--accent-color);
-    transition: all 0.2s ease-in-out ;
+    grid-area: 'buttons';
 }
 
-.btn:hover {
-    transform: scale(1.05);
+.buttons:hover {
+    background-color:var(--accent-color-high);
+    transition: all 0.2s ease-in-out;
 }
+
+
 
 /*************** Catalog ***************/
 
@@ -177,11 +174,17 @@ h1 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #fff;
 }
 
-.status > *:hover {
+.read:hover {
     color: var(--body-color);
     background-color: var(--accent-color);
+    transition: all 0.2s ease-in-out;
+}
+.delete:hover {
+    color: var(--body-color);
+    background-color: var(--delete-color);
     transition: all 0.2s ease-in-out;
 }
 
@@ -192,6 +195,7 @@ h1 {
 .cover,
 .author,
 .year {
+    background-color: #fff;
     border-bottom: var(--general-border);
 }
 

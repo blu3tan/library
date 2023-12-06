@@ -5,21 +5,27 @@ const btnDelete = document.getElementById('delete');
 
 const library = [
     {
-        'title' : 'A Tale of Two Cities',
-        'author': 'Charles Dickens',
-        'year' : 1859,
+        'title' : 'Don Quixote',
+        'author': 'Miguel de Cervantes',
+        'year' : 1605,
+        'read'  : 'false'
+    }, 
+    {
+        'title' : 'Moby Dick',
+        'author': 'Herman Melville',
+        'year' : 1851,
+        'read'  : 'false'
+    }, 
+    {
+        'title' : '1984',
+        'author': 'George Orwell',
+        'year' : 1949,
         'read'  : 'false'
     }, 
     {
         'title' : 'To Kill a Mockingbird',
         'author': 'Harper Lee',
         'year' : 1960,
-        'read'  : 'false'
-    }, 
-    {
-        'title' : 'The Name of the Rose',
-        'author': 'Umberto Eco',
-        'year' : 1980,
         'read'  : 'false'
     }
 ];
@@ -54,7 +60,7 @@ function displayBooks() {
         readIcon.classList.add('material-symbols-outlined');
         trash.classList.add('delete');
         trashIcon.classList.add('material-symbols-outlined');
-        readIcon.innerText = 'visibility_off';
+        readIcon.innerText = 'book_2';
         trashIcon.innerText = 'delete';
         coverText.innerText = item.title;
         cover.style.backgroundColor = randomHsl();
@@ -62,13 +68,13 @@ function displayBooks() {
         year.innerText = `Year: ${item.year}`;
 
         read.addEventListener('click', (e) => {
-            if (readIcon.innerText == 'visibility_off') {
+            if (readIcon.innerText == 'book_2') {
                 e.target.classList.add('toggleOn');
-                readIcon.innerText = 'visibility';
+                readIcon.innerText = 'book_5';
                 item.read = 'true';
             }
             else {
-                readIcon.innerText = 'visibility_off';
+                readIcon.innerText = 'book_2';
                 e.target.classList.remove('toggleOn');
                 item.read = 'false';
             }
