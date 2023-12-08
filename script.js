@@ -122,7 +122,7 @@ function displayNewBook (item){
     status.appendChild(trash);
     catalog.appendChild(book);
 
-}
+};
 
 function displayBooks() {
     library.forEach(item => {
@@ -149,12 +149,10 @@ function addBook() {
     const authorValue = document.getElementById('author').value;
     const yearValue = document.getElementById('year').value;
     const colorValue = randomHsl();
-
-    const newBook = {};
-    newBook += new book(titleValue, authorValue, yearValue, readValue, colorValue);
+    
+    let newBook = new book(titleValue, authorValue, yearValue, readValue, colorValue);
     library.push(newBook);
     displayNewBook(newBook);
-    newBook = {};
 };
 
 function randomHsl() {
