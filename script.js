@@ -47,14 +47,17 @@ function book(title, author, year, read, color) {
     this.color = color;
 }
 
+btnReadModal.addEventListener('click', (e) => {
+    readButtonBehavior(e)
+});
+
+btnAddBookModal.addEventListener('click', (e) => {
+    addBook();
+    modal.close();
+});
+
 addBtn.addEventListener('click', () => {
     modal.showModal();
-    btnReadModal.addEventListener('click', (e) => {
-        readButtonBehavior(e)
-    });
-    btnAddBookModal.addEventListener('click', (e) => {
-        addBook();
-    });
 });
 
 function displayNewBook (item){
@@ -153,10 +156,11 @@ function addBook() {
     let newBook = new book(titleValue, authorValue, yearValue, readValue, colorValue);
     library.push(newBook);
     displayNewBook(newBook);
+    newBook = {};
 };
 
 function randomHsl() {
-    return 'hsl(' + (Math.random() * 360) + ', 50%, 42%)';
+    return 'hsl(' + (Math.floor(Math.random() * 360)) + ', 50%, 42%)';
 };
 
 function clearLibrary(element) {
