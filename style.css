@@ -119,7 +119,7 @@ h1 {
     align-items: center;
     grid-area: 'title';
 }
-.buttons {
+.add-book-btn {
     background-color: var(--accent-color);
     border-left: var(--general-border);
     cursor: pointer;
@@ -130,11 +130,11 @@ h1 {
     transition: all 0.3s ease-in-out;
 }
 
-.buttons:hover {
+.add-book-btn:hover {
     background-color:var(--accent-color-high);
     transition: all 0.3s ease-in-out;
 }
-.buttons > *:hover{
+.add-book-btn > *:hover{
     scale: 1.1;
     transition: all 0.3s ease-in-out;
 }
@@ -227,6 +227,54 @@ h1 {
     opacity: 0;
     transition: all 0.5s ease-out;
 }
+
+/*************** Modal card ***************/
+
+.modal[open] {
+    position: absolute;
+    margin: auto;
+    border: var(--general-border);
+    max-height: 450px;
+    width: 350px;
+    border-radius: 0.2rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    transition: all 0.5s ease-in-out;
+}
+
+.modal-form-row {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-bottom: var(--general-border);
+}
+
+.modal-form-row input {
+    outline: none;
+    border: 0;
+}
+
+.modal-form-row label {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.modal-form-row button {
+    font-size: 1.5rem;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+}
+
+input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
 
 /*************** Responsive queries ***************/
 

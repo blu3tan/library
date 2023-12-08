@@ -18,7 +18,7 @@
             <div class="title">
                 <h1>Library</h1>
             </div>
-            <div class="buttons">
+            <div class="add-book-btn">
                 <span id="add-new" class="material-symbols-outlined">
                     library_add
                     </span>
@@ -26,6 +26,26 @@
         </section>
         <section class="catalog" id="display"></section>
     </div>
+
+    <dialog closed class="modal">
+        <form action="" method="dialog">
+            <div class="modal-form-row">
+                <label for="title">Title</label>
+                    <input id="title" name="title" type="text" maxlength="30" placeholder="title" required>
+            </div>
+            <div class="modal-form-row">
+                <label for="author">Author</label>
+                <input id="author" name="author" type="text" maxlength="30" placeholder="author" required>
+            </div>
+            <div class="modal-form-row">
+                <label for="year">Year</label>
+                <input id="year" name="year" type="number" placeholder="year" maxlength="4">
+            </div>
+            <div class="modal-form-row">
+            <button id="modal-submit" type="submit" class="modal-add-button">Add Book</button>
+            </div>
+        </form>
+    </dialog>
     
 <script src="script.js"></script>
 </body>

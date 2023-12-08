@@ -1,5 +1,6 @@
 const catalog = document.getElementById('display');
-const btnAdd = document.getElementById('book-add');
+const addBtn = document.querySelector('.add-book-btn');
+const modal = document.querySelector('.modal');
 const btnRead = document.querySelector('read');
 const btnDelete = document.getElementById('delete');
 
@@ -36,6 +37,11 @@ function book(title, author, year, read) {
     this.year = year;
     this.read = read;
 }
+
+addBtn.addEventListener('click', () => {
+    modal.showModal();
+});
+
 
 function displayBooks() {
     library.forEach(item => {
