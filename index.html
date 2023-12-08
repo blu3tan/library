@@ -30,19 +30,31 @@
     <dialog closed class="modal">
         <form action="" method="dialog">
             <div class="modal-form-row">
-                <label for="title">Title</label>
-                    <input id="title" name="title" type="text" maxlength="30" placeholder="title" required>
+                <!-- <label for="title">Title</label> -->
+                    <input id="title" name="title" type="text" maxlength="30" placeholder="Title" required>
             </div>
             <div class="modal-form-row">
-                <label for="author">Author</label>
-                <input id="author" name="author" type="text" maxlength="30" placeholder="author" required>
+                <!-- <label for="author">Author</label> -->
+                <input id="author" name="author" type="text" maxlength="30" placeholder="Author" required>
             </div>
             <div class="modal-form-row">
-                <label for="year">Year</label>
-                <input id="year" name="year" type="number" placeholder="year" maxlength="4">
+                <!-- <label for="year">Year</label> -->
+                <input id="year" name="year" type="number" placeholder="Year" maxlength="4">
             </div>
-            <div class="modal-form-row">
-            <button id="modal-submit" type="submit" class="modal-add-button">Add Book</button>
+            <div class="modal-form-row options">
+            <button id="modal-read-value" type="button" class="modal-read-button">
+                <span class="material-symbols-outlined modal-read">
+                    book_2
+                    </span>
+            </button>
+            <button id="modal-add-book" type="submit" class="modal-add-button">
+                <span class="material-symbols-outlined modal-add">
+                    add_box
+                    </span>
+            </button>
+            </div>
+            <div class="modal-form-row last">
+            <button id="modal-submit" type="button" class="modal-del-button">Del Book</button>
             </div>
         </form>
     </dialog>

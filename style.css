@@ -21,7 +21,9 @@
 }
 
 .read .material-symbols-outlined,
-.delete .material-symbols-outlined {
+.delete .material-symbols-outlined,
+.modal-read.material-symbols-outlined,
+.modal-add.material-symbols-outlined {
     pointer-events: none;
     user-select: none;
     font-size: 3rem;
@@ -190,6 +192,13 @@ h1 {
     background-color: var(--accent-color);
     transition: all 0.2s ease-in-out;
 }
+
+.modal-read-button:hover {
+    color: var(--body-color);
+    background-color: var(--accent-color);
+    transition: all 0.2s ease-in-out;
+}
+
 .delete:hover {
     color: var(--body-color);
     background-color: var(--delete-color);
@@ -215,7 +224,8 @@ h1 {
 
 /*************** toggle for read button ***************/
 
-.read.toggleOn {
+.read.toggleOn,
+.modal-read-button.toggleOn {
     color: var(--body-color);
     background-color: var(--accent-color);
     transition: all 0.2s ease-in-out;
@@ -240,21 +250,43 @@ h1 {
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 1fr;
     transition: all 0.5s ease-in-out;
 }
 
 .modal-form-row {
-    padding: 0.5rem 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
     border-bottom: var(--general-border);
 }
+.modal-form-row.last {
+    border-bottom: 0;
+}
 
 .modal-form-row input {
     outline: none;
     border: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.modal-form-row input::placeholder {
+    opacity: 0.5;
+
+}
+
+.modal-form-row input:focus,
+.modal-form-row input:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transition: all 0.2s ease-in;
+}
+
+.modal-form-row input:focus::placeholder,
+.modal-form-row input:hover::placeholder {
+    color: #fff;
 }
 
 .modal-form-row label {
@@ -263,16 +295,37 @@ h1 {
 }
 
 .modal-form-row button {
+    padding: 1rem;
     font-size: 1.5rem;
     font-weight: 500;
     height: 100%;
     width: 100%;
-    background-color: transparent;
     border: 0;
 }
 
 input::-webkit-inner-spin-button {
     appearance: none;
+}
+
+.modal-form-row.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 0;
+    gap: 0;
+}
+
+.modal-form-row.options > * {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button.modal-read-button {
+    border-right: var(--general-border);
 }
 
 
