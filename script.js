@@ -54,6 +54,7 @@ btnReadModal.addEventListener('click', (e) => {
 btnAddBookModal.addEventListener('click', (e) => {
     addBook();
     modal.close();
+    document.getElementById('modal-form').reset();
 });
 
 addBtn.addEventListener('click', () => {

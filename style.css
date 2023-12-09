@@ -22,6 +22,7 @@
 
 .read .material-symbols-outlined,
 .delete .material-symbols-outlined,
+.delete.material-symbols-outlined,
 .modal-read.material-symbols-outlined,
 .modal-add.material-symbols-outlined {
     pointer-events: none;
@@ -188,19 +189,20 @@ h1 {
 }
 
 .read:hover {
-    color: var(--body-color);
+    color: #fff;
     background-color: var(--accent-color);
     transition: all 0.2s ease-in-out;
 }
 
-.modal-read-button:hover {
-    color: var(--body-color);
+.modal-read-button:hover,
+.modal-add-button:hover {
+    color: #fff;
     background-color: var(--accent-color);
     transition: all 0.2s ease-in-out;
 }
 
 .delete:hover {
-    color: var(--body-color);
+    color: #fff;
     background-color: var(--delete-color);
     transition: all 0.2s ease-in-out;
 }
@@ -226,7 +228,7 @@ h1 {
 
 .read.toggleOn,
 .modal-read-button.toggleOn {
-    color: var(--body-color);
+    color: #fff;
     background-color: var(--accent-color);
     transition: all 0.2s ease-in-out;
 }
@@ -247,6 +249,7 @@ h1 {
     max-height: 450px;
     width: 350px;
     border-radius: 0.2rem;
+    background-color: #fff;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -258,10 +261,16 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
+    background-color: #fff;
     border-bottom: var(--general-border);
 }
-.modal-form-row.last {
-    border-bottom: 0;
+
+.modal-form-row.last > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .modal-form-row input {
@@ -298,9 +307,8 @@ h1 {
     padding: 1rem;
     font-size: 1.5rem;
     font-weight: 500;
-    height: 100%;
-    width: 100%;
     border: 0;
+    background-color: transparent;
 }
 
 input::-webkit-inner-spin-button {
@@ -326,6 +334,21 @@ input::-webkit-inner-spin-button {
 
 button.modal-read-button {
     border-right: var(--general-border);
+}
+
+.modal-form-row.last {
+    border-bottom: 0;
+}
+
+.modal-form-row.last:hover {
+    color: #fff;
+    background-color: var(--delete-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-del-button:hover {
+    color: #fff;
+    transition: all 0.2s ease-in-out;
 }
 
 

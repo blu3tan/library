@@ -28,7 +28,7 @@
     </div>
 
     <dialog class="modal">
-        <form action="" method="dialog">
+        <form action="" method="dialog" id="modal-form">
             <div class="modal-form-row">
                 <!-- <label for="title">Title</label> -->
                     <input id="title" name="title" type="text" maxlength="30" placeholder="Title" required>
@@ -54,7 +54,11 @@
             </button>
             </div>
             <div class="modal-form-row last">
-            <button id="modal-submit" type="button" class="modal-del-button">Del Book</button>
+            <button id="modal-submit" type="button" class="modal-del-button">
+                <span class="material-symbols-outlined delete">
+                    delete
+                    </span>
+            </button>
             </div>
         </form>
     </dialog>
