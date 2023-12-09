@@ -13,28 +13,28 @@ const library = [
         'title' : 'Don Quixote',
         'author': 'Miguel de Cervantes',
         'year' : 1605,
-        'read'  : 'false',
+        'read'  : true,
         'color' : '#357FA1'
     }, 
     {
         'title' : 'Moby Dick',
         'author': 'Herman Melville',
         'year' : 1851,
-        'read'  : 'false',
+        'read'  : true,
         'color' : '#A13584'
     }, 
     {
         'title' : '1984',
         'author': 'George Orwell',
         'year' : 1949,
-        'read'  : 'false',
+        'read'  : false,
         'color' : '#3594A1'
     }, 
     {
         'title' : 'To Kill a Mockingbird',
         'author': 'Harper Lee',
         'year' : 1960,
-        'read'  : 'false',
+        'read'  : false,
         'color' : '#78A136'
     }
 ];
@@ -89,16 +89,17 @@ function displayNewBook (item){
     author.innerText = `By: ${item.author}`;
     year.innerText = `Year: ${item.year}`;
 
+
     read.addEventListener('click', (e) => {
         if (readIcon.innerText == 'book_2') {
             e.target.classList.add('toggleOn');
             readIcon.innerText = 'book_5';
-            item.read = 'true';
+            item.read = true;
         }
         else {
             readIcon.innerText = 'book_2';
             e.target.classList.remove('toggleOn');
-            item.read = 'false';
+            item.read = false;
         }
     });
 
@@ -125,6 +126,15 @@ function displayNewBook (item){
     status.appendChild(trash);
     catalog.appendChild(book);
 
+    if (item.read === true) {
+        read.classList.add('toggleOn');
+        readIcon.innerText = 'book_5';
+    }
+    else {
+        read.classList.remove('toggleOn');
+        readIcon.innerText = 'book_2';
+    };
+
 };
 
 function displayBooks() {
@@ -138,12 +148,12 @@ function readButtonBehavior(e) {
     if (readIconModal.innerText == 'book_2') {
         e.target.classList.add('toggleOn');
         readIconModal.innerText = 'book_5';
-        readValue = 'true';
+        readValue = true;
     }
     else {
         readIconModal.innerText = 'book_2';
         e.target.classList.remove('toggleOn');
-        readValue = 'false';
+        readValue = false;
     }
 };
 
@@ -168,5 +178,6 @@ function clearLibrary(element) {
         element.removeChild(element.firstChild);
     }
 };
+
 
 displayBooks();
