@@ -246,7 +246,6 @@ h1 {
     position: absolute;
     margin: auto;
     border: var(--general-border);
-    max-height: 450px;
     width: 350px;
     border-radius: 0.2rem;
     background-color: #fff;
@@ -255,18 +254,25 @@ h1 {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     transition: all 0.5s ease-in-out;
+    z-index: 90;
+}
+
+.modal::backdrop {
+    opacity: 0.5;
+    background-color: hsl(43, 93%, 95%);
 }
 
 .modal-form-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     background-color: #fff;
     border-bottom: var(--general-border);
 }
 
 .modal-form-row.last > * {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -351,6 +357,10 @@ button.modal-read-button {
     transition: all 0.2s ease-in-out;
 }
 
+button.modal-del-button {
+    align-self: flex-start;
+}
+
 
 /*************** Responsive queries ***************/
 
@@ -358,6 +368,15 @@ button.modal-read-button {
     .catalog {
         grid-template-columns: repeat(4, 1fr);
         padding: 4rem 2rem;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .modal[open] {
+        overflow: hidden;
+        position:fixed;
+        width: 100%;
     }
 
 }

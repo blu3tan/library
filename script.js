@@ -5,6 +5,7 @@ const btnRead = document.querySelector('read');
 const btnReadModal = document.getElementById('modal-read-value');
 const btnAddBookModal = document.getElementById('modal-add-book');
 const btnDelete = document.getElementById('delete');
+const btnModalDelete = document.getElementById('modal-submit');
 
 let readValue = 'false'; 
 
@@ -55,6 +56,15 @@ btnAddBookModal.addEventListener('click', (e) => {
     addBook();
     modal.close();
     document.getElementById('modal-form').reset();
+});
+
+btnModalDelete.addEventListener('click', (e) => {
+    modal.classList.add('book-remove');
+    setTimeout (() => {
+        modal.close();
+        document.getElementById('modal-form').reset();
+        modal.classList.remove('book-remove');
+    }, 600);
 });
 
 addBtn.addEventListener('click', () => {

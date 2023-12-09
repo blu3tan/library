@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" initial-scale=1.0 content="width=device-width"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <title>Library</title>
@@ -27,8 +27,8 @@
         <section class="catalog" id="display"></section>
     </div>
 
-    <dialog class="modal">
-        <form action="" method="dialog" id="modal-form">
+    <dialog closed class="modal">
+        <form action="#" method="dialog" id="modal-form">
             <div class="modal-form-row">
                 <!-- <label for="title">Title</label> -->
                     <input id="title" name="title" type="text" maxlength="30" placeholder="Title" required>
@@ -39,7 +39,7 @@
             </div>
             <div class="modal-form-row">
                 <!-- <label for="year">Year</label> -->
-                <input id="year" name="year" type="number" placeholder="Year" maxlength="4">
+                <input id="year" name="year" type="number" placeholder="Year" maxlength="4" required>
             </div>
             <div class="modal-form-row options">
             <button id="modal-read-value" type="button" class="modal-read-button">
@@ -47,7 +47,7 @@
                     book_2
                     </span>
             </button>
-            <button id="modal-add-book" type="button" class="modal-add-button">
+            <button id="modal-add-book" type="submit" class="modal-add-button">
                 <span class="material-symbols-outlined modal-add">
                     add_box
                     </span>
