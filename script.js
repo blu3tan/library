@@ -52,7 +52,7 @@ btnReadModal.addEventListener('click', (e) => {
     readButtonBehavior(e)
 });
 
-btnAddBookModal.addEventListener('click', (e) => {
+btnAddBookModal.addEventListener('submit', (e) => {
     addBook();
     modal.close();
     document.getElementById('modal-form').reset();
