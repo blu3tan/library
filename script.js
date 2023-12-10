@@ -59,6 +59,7 @@ btnModalDelete.addEventListener('click', (e) => {
         modal.close();
         modal.removeAttribute('closing');
         document.getElementById('modal-form').reset();
+        readModalButtonReset();
     }, 550);
 });
 
@@ -73,6 +74,7 @@ form.addEventListener('submit', () =>{
         addBook();
         modal.close();
         document.getElementById('modal-form').reset();
+        readModalButtonReset();
         modal.removeAttribute('closing');
     }, 550);
     event.preventDefault();
@@ -173,6 +175,14 @@ function readButtonBehavior(e) {
         e.target.classList.remove('toggleOn');
         readValue = false;
     }
+};
+
+function readModalButtonReset() {
+    const readIconModal = document.querySelector('.modal-read');
+
+    btnReadModal.classList.remove('toggleOn');
+    readIconModal.innerText = 'book_2';
+    readValue = false;
 };
 
 function addBook() {
