@@ -6,8 +6,9 @@ const btnReadModal = document.getElementById('modal-read-value');
 const btnAddBookModal = document.getElementById('modal-add-book');
 const btnDelete = document.getElementById('delete');
 const btnModalDelete = document.getElementById('modal-submit');
+const form = document.getElementById('modal-form');
 
-let readValue = 'false'; 
+let readValue = false; 
 
 const library = [
     {
@@ -52,23 +53,29 @@ btnReadModal.addEventListener('click', (e) => {
     readButtonBehavior(e)
 });
 
-btnAddBookModal.addEventListener('submit', (e) => {
-    addBook();
-    modal.close();
-    document.getElementById('modal-form').reset();
-});
-
 btnModalDelete.addEventListener('click', (e) => {
-    modal.classList.add('book-remove');
+    modal.setAttribute('closing', '');
     setTimeout (() => {
         modal.close();
+        modal.removeAttribute('closing');
         document.getElementById('modal-form').reset();
-        modal.classList.remove('book-remove');
-    }, 600);
+    }, 550);
 });
 
 addBtn.addEventListener('click', () => {
     modal.showModal();
+});
+
+form.addEventListener('submit', () =>{
+    modal.setAttribute('closing', '');
+    setTimeout (() => {
+        form.submit();
+        addBook();
+        modal.close();
+        document.getElementById('modal-form').reset();
+        modal.removeAttribute('closing');
+    }, 550);
+    event.preventDefault();
 });
 
 function displayNewBook (item){

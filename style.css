@@ -35,7 +35,7 @@
     'opsz' 40
 }
 
-/* General reset */
+/******************* General reset ********************/
 
 *,
 *::before,
@@ -67,6 +67,26 @@ h1 {
     font-size: 3rem;
 }
 
+/******************* Animation ********************/
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 /*************** Main container ***************/
 
 .main-container {
@@ -87,6 +107,7 @@ h1 {
     background-color: #fff;
     border: var(--general-border);
     border-radius: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
     display: grid;
     grid-template-columns: 120px 1fr 120px;
@@ -157,6 +178,7 @@ h1 {
 .book-card {
     border: var(--general-border);
     border-radius: 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -242,19 +264,41 @@ h1 {
 
 /*************** Modal card ***************/
 
+.modal[open][closing] {
+    pointer-events: none;
+    animation: fade-out 0.5s forwards;
+}
+
+.modal[closing] {
+    pointer-events: none;
+    animation: fade-out 0.5s forwards;
+}
+
 .modal[open] {
+    animation: fade-in 0.5s forwards;
     position: absolute;
     margin: auto;
     border: var(--general-border);
     width: 350px;
     border-radius: 0.2rem;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     transition: all 0.5s ease-in-out;
     z-index: 90;
+}
+
+.modal[open]::backdrop {
+    background-color: hsl(43, 93%, 95%, 50%);
+    animation: fade-in 0.5s forwards;
+}
+
+.modal[closing]::backdrop {
+    background-color: hsl(43, 93%, 95%, 50%);
+    animation: fade-out 0.5s forwards;
 }
 
 .modal::backdrop {
@@ -373,8 +417,16 @@ button.modal-del-button {
 }
 
 @media (max-width: 550px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .book-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px repeat(3, 1fr);
+    }
+
     .modal[open] {
-        overflow: hidden;
         position:fixed;
         width: 100%;
     }
