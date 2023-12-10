@@ -10,9 +10,9 @@
 <body>
     <div class="main-container">
         <section class="header">
-            <div class="logo">
+            <div class="logo" id="logo-button">
                 <span id="book" class="material-symbols-outlined">
-                menu_book
+                info
                 </span>
             </div>
             <div class="title">
@@ -20,7 +20,7 @@
             </div>
             <div class="add-book-btn">
                 <span id="add-new" class="material-symbols-outlined">
-                    library_add
+                    add_box
                     </span>
             </div>
         </section>
@@ -61,6 +61,36 @@
             </button>
             </div>
         </form>
+    </dialog>
+    <dialog class="info-modal" id="info-modal">
+        <div class="modal-info info-body">
+            <div>
+                <span class="material-symbols-outlined modal-add info">
+                    add_box
+                    </span>
+                    <span>Add new book</span>
+            </div>
+            <div>
+                <span class="material-symbols-outlined modal-read info">
+                    book_2
+                    </span>
+                    <span>Toggle read status</span>
+            </div>
+            <div>
+                <span class="material-symbols-outlined delete info">
+                    delete
+                    </span>
+                    <span>Delete book / Close</span>
+            </div>
+            <div class="credits">
+                <span class="footer">Copyright © <script>document.write( new Date().getFullYear() );</script> - <a class="blu3" href="https://github.com/blu3tan">Blu3</a></span>
+            </div>
+        </div>
+        <div class="modal-info info-button" id="info-close-button">
+            <span class="material-symbols-outlined delete info">
+                delete
+                </span>
+        </div>
     </dialog>
     
 <script src="script.js"></script>

@@ -7,6 +7,9 @@ const btnAddBookModal = document.getElementById('modal-add-book');
 const btnDelete = document.getElementById('delete');
 const btnModalDelete = document.getElementById('modal-submit');
 const form = document.getElementById('modal-form');
+const infoButton = document.getElementById('logo-button');
+const infoModal = document.getElementById('info-modal');
+const infoCloseButton = document.getElementById('info-close-button');
 
 let readValue = false; 
 
@@ -65,6 +68,18 @@ btnModalDelete.addEventListener('click', (e) => {
 
 addBtn.addEventListener('click', () => {
     modal.showModal();
+});
+
+infoButton.addEventListener('click', () => {
+    infoModal.showModal();
+});
+
+infoCloseButton.addEventListener('click', () => {
+    infoModal.setAttribute('closing', '');
+    setTimeout (() => {
+        infoModal.close();
+        infoModal.removeAttribute('closing');
+    }, 550);
 });
 
 form.addEventListener('submit', () =>{
