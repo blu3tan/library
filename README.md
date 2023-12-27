@@ -2,7 +2,7 @@
 
 <div align="center">
 <a href="https://github.com/blu3tan/library">
-<img src="./Library_gif.gif">
+<img src="./Library.gif">
 </a>
 
 This is my take on the Library project (without storage)
