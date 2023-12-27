@@ -1,4 +1,4 @@
-# Tic Tac Toe #
+# Library #
 
 <div align="center">
 <a href="https://github.com/blu3tan/library">
