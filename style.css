@@ -492,7 +492,7 @@ button.modal-del-button {
     color: var(--delete-color);
     padding: 1rem 0;
 }
-/*************** Responsive queries ***************/
+/************************* Responsive queries *************************/
 
 @media (min-width: 1350px) {
     .catalog {

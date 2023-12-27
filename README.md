@@ -1,14 +1,26 @@
-# Library
+# Tic Tac Toe #
 
-Live demo: https://blu3tan.github.io/library/
+<div align="center">
+<a href="https://github.com/blu3tan/library">
+<img src="./Library_gif.gif">
+</a>
 
 This is my take on the Library project (without storage)
+[Live Demo](https://blu3tan.github.io/library/)
+
+</div>
+
+# Concept #
 
 As always my goal is to deliver (given my current capabilities) something close
 to a real web app, with in mind aesthetics and user experience.
 
+
+# Visual #
+
 The project is mobile responsive even tho the modal backdrop
 animation is not working on firefox right now.
+
 There are 4 books hard coded just to showcase an hypothetical real behavior, 
 this led to a little much more javascript but the result is way more appealing
 in my opinion so totally worth it.
@@ -20,4 +32,6 @@ but since i like clean and intuitive design i try to avoid text labels on button
 here was possible.
 
 Any feedback would be highly appreciated, enjoy.
+
+----------------------------------------------------------------------------------------------
 
