@@ -44,13 +44,25 @@ const library = [
     }
 ];
 
-function book(title, author, year, read, color) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
-    this.read = read;
-    this.color = color;
+class Book {
+    constructor (title, author, year, read, color) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.read = read;
+        this.color = color;
+    }
 }
+
+// Book oject using constructor function method
+
+// function book (title, author, year, read, color) {
+//     this.title = title;
+//     this.author = author;
+//     this.year = year;
+//     this.read = read;
+//     this.color = color;
+// }
 
 btnReadModal.addEventListener('click', (e) => {
     readButtonBehavior(e)
@@ -206,7 +218,7 @@ function addBook() {
     const yearValue = document.getElementById('year').value;
     const colorValue = randomHsl();
     
-    let newBook = new book(titleValue, authorValue, yearValue, readValue, colorValue);
+    let newBook = new Book(titleValue, authorValue, yearValue, readValue, colorValue);
     library.push(newBook);
     displayNewBook(newBook);
     newBook = {};
